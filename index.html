@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Soul — Autonomous Safety by Voice & Sensors</title>
+  <meta name="description" content="Guardian's Voice — always-on, voice-activated emergency detection and crash detection. Secure media capture and rapid delivery to automation platforms (n8n) and trusted responders." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">SOUL.Ai<span class="brand-para">-"voice of hell"</span></h1> 
+      
+      <nav>
+        <a href="#how">How it works</a>
+        <a href="docs/enrollment.md">Enrollment</a>
+        <a href="docs/crash_detection.md">Crash Detection</a>
+        <a href="docs/api_payload.md">API / n8n</a>
+        <a href="docs/privacy.md">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h2>Non-manual, autonomous emergency detection</h2>
+          <p>Guardian's Voice listens for your enrolled emergency phrase and uses on-device speaker verification and acoustic stress analysis to detect high-duress events. It also detects severe vehicle impacts using fused sensors, and securely uploads critical media and location to cloud storage and automation systems (n8n).</p>
+          <div class="cta-row">
+            <a class="btn primary" href="docs/enrollment.md">Get Started</a>
+            <a class="btn outline" href="docs/api_payload.md">Integration (n8n)</a>
+          </div>
+          <p class="small-note">Prototype — deploy to consenting pilots only after legal review and agreements with responders.</p>
+        </div>
+        <div class="hero-media">
+          <div class="card">
+            <h3>Quick links</h3>
+            <ul>
+              <li><a href="docs/enrollment.md" class="li-items">Voice enrollment & liveness</a></li>
+              <li><a href="docs/crash_detection.md" class="li-items">Crash detection & 60s protocol</a></li>
+              <li><a href="docs/api_payload.md" class="li-items">Media upload & n8n payload</a></li>
+              <li><a href="docs/privacy.md" class="li-items">Privacy & consent</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="container how">
+      <h2>How Guardian's Voice works</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Part 1 — Voice Trigger</h3>
+          <p>Always-on low-power wake-word detection + speaker verification + acoustic stress classifier (shouting / irregular breathing / high energy) to confirm duress before triggering capture.</p>
+          <a class="btn outline" href="docs/enrollment.md">Read details</a>
+        </div>
+        <div class="card">
+          <h3>Part 2 — Crash Detection</h3>
+          <p>Sensor fusion (accelerometer, gyroscope, GPS, microphone) to detect high-g impacts. If detected, a 60-second cancel window appears; otherwise the emergency sequence triggers.</p>
+          <a class="btn outline" href="docs/crash_detection.md">Read details</a>
+        </div>
+        <div class="card">
+          <h3>Part 3 — Secure Upload & n8n</h3>
+          <p>Pre-trigger camera ring-buffers + post-trigger recording are encrypted and uploaded to cloud storage via presigned URLs. The app posts a signed JSON payload to an n8n webhook with time-limited media links.</p>
+          <a class="btn outline" href="docs/api_payload.md">See payload</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container features">
+      <h2>Key Features</h2>
+      <ul>
+        <li>On-device voice enrollment and speaker identification</li>
+        <li>Acoustic stress analysis and anti-replay checks</li>
+        <li>Low-power KWS using quantized TFLite or Picovoice/Porcupine</li>
+        <li>Multi-sensor crash detection and 60s cancel protocol</li>
+        <li>Secure, prioritized media upload with presigned URLs and short-lived sharing links</li>
+      </ul>
+    </section>
+
+    <section class="container contact">
+      <h2>Contact & Pilot Requests</h2>
+      <p>To request the full mobile & backend repo for a closed pilot, email: <a href="mailto:hello@guardianvoice.example">hello@guardianvoice.example</a></p>
+    </section>
+
+    <section class="container legal">
+      <p><strong>Important:</strong> This project handles sensitive audio, video and location data. Do not run public pilots without legal review and explicit informed consent from participants. See <a href="docs/privacy.md">Privacy & Consent</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 Guardian's Voice — Prototype. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
